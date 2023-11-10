@@ -29,7 +29,7 @@
    ``` java
    main{
         // 获取Spring上下文对象
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");// 可以传不定参数
         // 对象都在Spring中管理了，要使用就直接从ApplicationContext中取出来
         Hello hello = (Hello) context.getBean("hello");
         hello.show();

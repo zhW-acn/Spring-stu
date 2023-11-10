@@ -21,4 +21,6 @@
         <property name="name" value="b"/>
     </bean>
 
+    <alias name="hello" alias="你好"/>
+
 </beans>
