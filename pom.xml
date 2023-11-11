@@ -11,6 +11,7 @@
     <modules>
         <module>Spring-01-hello</module>
         <module>Spring-02-di</module>
+        <module>Spring-03-AutoWired</module>
     </modules>
 
     <properties>
