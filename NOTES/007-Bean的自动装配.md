@@ -9,7 +9,7 @@
 自动装配
 -
 ### byName
-
+                                                                                               
 `<bean id="p2" class="com.acn.Person" p:name="p2" autowire="byName"/>`
 
 会自动在容器中找与**set方法值**对应bean的id

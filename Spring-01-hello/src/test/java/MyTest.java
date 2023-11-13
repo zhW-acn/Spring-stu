@@ -1,6 +1,9 @@
 import com.acn.Hello;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * @Description: TODO
@@ -13,6 +16,7 @@ public class MyTest {
 
         // 获取Spring上下文对象
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");// 可以传不定参数
+//        BeanFactory context = new XmlBeanFactory(new ClassPathResource("beans.xml"));
         // 对象都在Spring中管理了，要使用就直接从ApplicationContext中取出来
 //        Hello hello = (Hello) context.getBean("你好");
         Hello 你好 = context.getBean("你好", Hello.class);// 使用反射给定返回类型就不用强转了

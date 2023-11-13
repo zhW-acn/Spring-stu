@@ -25,5 +25,12 @@ public class MyTest {
         p3.getDog().shout();
     }
 
+    @Test
+    public void testByAnnotation(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans-annotation.xml");
+        com.acn.annotation.Person p = context.getBean("person", com.acn.annotation.Person.class);
+        p.getCat().shout();
+    }
+
 
 }

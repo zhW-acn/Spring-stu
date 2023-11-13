@@ -1,0 +1,7 @@
+- id：bean的唯一标识
+- class：全限定类名
+- lazy-init：是否延迟加载
+- init-method：对象初始化完成后Spring立即执行什么方法
+- destroy-method：对象被销毁之前Spring会调用什么方法
+- scope：singleton&prototype...[这里更详细](../NOTES/006-Bean的作用域&单例模式.md)
+- depends-on：在实例化之前要先实例化另一个对象

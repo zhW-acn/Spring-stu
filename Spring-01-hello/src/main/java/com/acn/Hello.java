@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class Hello {
 
     String name;
@@ -20,5 +19,9 @@ public class Hello {
     public void showA(){
         System.out.println(a.name);
 
+    }
+
+    public Hello() {
+        System.out.println("加载Hello："+this.name);
     }
 }

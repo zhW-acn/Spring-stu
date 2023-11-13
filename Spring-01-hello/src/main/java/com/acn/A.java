@@ -11,7 +11,10 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class A {
     String name;
+
+    public A() {
+        System.out.println("加载A："+this.name);
+    }
 }
