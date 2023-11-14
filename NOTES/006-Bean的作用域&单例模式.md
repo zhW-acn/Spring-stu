@@ -2,6 +2,8 @@
 官网文档的解释
 ![Bean Scope.png](img/Bean Scope.png)
 
+如何配置bean的作用域：给bean标签的属性scope赋相应值
+
 Bean的作用域
 - singleton（默认）：单例，全局唯一。【感觉很像static】
 - prototype：原型，每次请求都会创建新的实例。【感觉像饿汉式】

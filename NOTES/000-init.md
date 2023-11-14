@@ -26,6 +26,6 @@ Spring Cloud：基于SB实现
 复习一下什么是JavaBean：
 
 1. public无参构造
-2. 且具有包结构
+2. 具有包结构
 3. 私有属性
 4. 每个属性都有其GetterSetter方法

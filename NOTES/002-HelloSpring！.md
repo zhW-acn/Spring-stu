@@ -41,7 +41,7 @@
 xml配置：
 *    id:变量名
 *    class:类名
-*    property:属性赋值
+*    property:通过Setter方法给对应属性赋值
 *    name:属性名
 *    value:属性值
 *    ref:指向容器中的另一个bean

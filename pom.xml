@@ -13,6 +13,7 @@
         <module>Spring-02-di</module>
         <module>Spring-03-AutoWired</module>
         <module>Spring-04-anno</module>
+        <module>Spring-appConfig</module>
     </modules>
 
     <properties>
@@ -42,6 +43,12 @@
             <artifactId>lombok</artifactId>
             <version>1.18.26</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.11</version>
         </dependency>
     </dependencies>
 

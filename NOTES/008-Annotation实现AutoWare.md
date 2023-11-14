@@ -1,5 +1,7 @@
 jdk1.5支持注解，Spring2.5支持注解
 
+## AutoWired注解
+
 在使用注解之前：
 1. 导入约束`xmlns:context="http://www.springframework.org/schema/context"`
 2. 配置注解的支持
