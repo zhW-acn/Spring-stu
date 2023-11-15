@@ -14,6 +14,8 @@
         <module>Spring-03-AutoWired</module>
         <module>Spring-04-anno</module>
         <module>Spring-appConfig</module>
+        <module>Spring-06-ProxyModel</module>
+        <module>Spring-07-aop</module>
     </modules>
 
     <properties>
