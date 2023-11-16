@@ -1,3 +1,11 @@
+#  什么是自动装配？
+
+自动装配主要用于将一个 Spring bean 与另一个 Spring bean 关联起来。
+
+这意味着 Spring 容器会自动处理 bean 之间的依赖关系，将一个 bean 的属性或构造函数参数注入到另一个 bean 中。
+
+
+# 自动装配的方式
 在Spring中有三种装配方式，自动装配是Spring满足Bean依赖的一种方式
 
 1. 在xml中显式的配置

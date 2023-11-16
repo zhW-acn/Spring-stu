@@ -7,7 +7,7 @@
 		https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="cat" class="com.acn.Cat"/>
+    <bean id="cat" class="com.acn.test.Cat"/>
     <bean id="dogggg" class="com.acn.Dog"/>
 
     <!--手动装配cat和dog-->

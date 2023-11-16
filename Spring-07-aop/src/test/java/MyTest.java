@@ -20,4 +20,13 @@ public class MyTest {
 
         userService.add();
     }
+
+    @Test
+    public void annotationTest(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean-anno-config.xml");
+
+        UserService userService = context.getBean("userService", UserService.class);
+
+        System.out.println(userService.add());
+    }
 }

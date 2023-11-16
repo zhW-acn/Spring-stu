@@ -9,8 +9,8 @@
 
     <context:annotation-config/>
 
-    <bean id="cat1" class="com.acn.annotation.Cat"/>
-    <bean id="cat2" class="com.acn.annotation.Cat"/>
+    <bean id="cat1" class="com.acn.annotation.test.Cat"/>
+    <bean id="cat2" class="com.acn.annotation.test.Cat"/>
     <bean id="dog" class="com.acn.annotation.Dog"/>
     <bean id="person" class="com.acn.annotation.Person"/>
 
