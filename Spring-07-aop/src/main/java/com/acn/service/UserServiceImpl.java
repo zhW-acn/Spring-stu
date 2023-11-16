@@ -7,8 +7,9 @@ package com.acn.service;
  */
 public class UserServiceImpl implements UserService{
     @Override
-    public void add() {
+    public int add() {
         System.out.println("增");
+        return 1;
     }
 
     @Override
@@ -27,5 +28,10 @@ public class UserServiceImpl implements UserService{
     public void query() {
         System.out.println("查");
 
+    }
+
+    @Override
+    public String toString() {
+        return "UserServiceImpl{}";
     }
 }

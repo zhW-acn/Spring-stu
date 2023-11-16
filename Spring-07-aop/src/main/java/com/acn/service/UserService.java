@@ -1,7 +1,7 @@
 package com.acn.service;
 
 public interface UserService {
-    void add();
+    int add();
     void delete();
     void update();
     void query();

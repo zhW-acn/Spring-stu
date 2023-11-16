@@ -11,9 +11,12 @@ import java.lang.reflect.Method;
  */
 public class AfterLog implements AfterReturningAdvice {
 
-    // returnValue：返回值
+    // returnValue：返回值类型
+    // method：方法:
+    // args：参数
+    // target：对象
     @Override
-    public void afterReturning(Object returnValue, Method method, Object[] objects, Object o1) throws Throwable {
-        System.out.println("执行了" + method.getName() + "方法，返回结果为" + returnValue);
+    public void afterReturning(Object returnValue, Method method, Object[] args, Object target) throws Throwable {
+        System.out.println("执行了" + method.getName() + "方法，返回结果为" + returnValue + "目标" + target);
     }
 }
