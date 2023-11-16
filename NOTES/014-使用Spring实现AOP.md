@@ -45,4 +45,31 @@
     - `.*(..)`：【..：表示任意参数类型和个数】
     - 访问修饰符 返回类型 全限定类名.方法都可以用*代替
 
-# 自定义类实现AOP
+# 自定义类实现AOP【主要是切面定义】
+```java
+public class DiyPointCut {
+    public void before(){
+        System.out.println("方法执行前");
+    }
+
+    public void after(){
+        System.out.println("方法执行后");
+    }
+}
+```
+
+
+```
+<aop:config>
+        <!--自定义切面，rif：指向自定义切面bean的id-->
+        <aop:aspect ref="diy">
+            <!--切入点-->
+            <aop:pointcut id="point" expression="execution(* com.acn.service.UserServiceImpl.*(..))"/>
+
+            <!--通知-->
+            <!--通知类型：before，方法是diy的before方法，在point切入-->
+            <aop:before method="before" pointcut-ref="point"/>
+            <aop:after method="after" pointcut-ref="point"/>
+        </aop:aspect>
+    </aop:config>
+```
