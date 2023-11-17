@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--DataSource：使用Spring数据源替换MyBatis的配置-->
+    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource"
+          p:driverClassName="com.mysql.cj.jdbc.Driver"
+          p:url="jdbc:mysql:///test?characterEncoding=utf-8"
+          p:username="root"
+          p:password="acane"
+    />
+
+    <!--sqlSessionFactory-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sessionFactory">
+        <property name="dataSource" ref="dataSource"/>
+        <!--绑定MyBatis配置文件-->
+        <property name="configLocation" value="db/mybatis-config.xml"/>
+        <!--注册Mapper-->
+        <property name="mapperLocations" value="db/mapper/*.xml"/>
+    </bean>
+
+    <!--只能构造器注入，因为SqlSessionTemplate没有Setter-->
+    <bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession"
+          c:_0-ref="sessionFactory"/>
+
+</beans>

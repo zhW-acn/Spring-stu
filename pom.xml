@@ -16,6 +16,7 @@
         <module>Spring-appConfig</module>
         <module>Spring-06-ProxyModel</module>
         <module>Spring-07-aop</module>
+        <module>Spring-08-Mybatis</module>
     </modules>
 
     <properties>
