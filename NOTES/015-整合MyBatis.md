@@ -88,3 +88,24 @@ public class StudentMapperImpl implements StudentMapper{
 <bean class="com.acn.mapper.StudentMapperImpl" id="studentMapper"
       p:sqlSession-ref="sqlSession"/>
 ```
+
+## 4.整合方式2：继承SqlSessionDaoSupport
+
+```java
+public class StudentMapperImpl2 extends SqlSessionDaoSupport implements StudentMapper {
+
+    @Override
+    public List<Student> selectAllStudents() {
+        return getSqlSession().getMapper(StudentMapper.class).selectAllStudents();
+    }
+}
+```
+需要配置sqlSessionFactory，而非sqlSession
+```
+<bean class="com.acn.mapper.StudentMapperImpl2" id="studentMapper2"
+          p:sqlSessionFactory-ref="sessionFactory"/>
+```
+
+继承SqlSessionDaoSupport，调用静态方法`getSqlSession()`得到sqlSession。
+
+相当于进一步封装了，无需自己手动创建sqlSession字段

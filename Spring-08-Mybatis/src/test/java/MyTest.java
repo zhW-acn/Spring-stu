@@ -1,5 +1,6 @@
 import com.acn.mapper.StudentMapper;
 import com.acn.mapper.StudentMapperImpl;
+import com.acn.mapper.StudentMapperImpl2;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -29,7 +30,13 @@ public class MyTest {
     @Test
     public void springConfigTest(){
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        StudentMapper studentMapper = context.getBean("studentMapper", StudentMapperImpl.class);
+        StudentMapper studentMapper = context.getBean("studentMapper", StudentMapper.class);
+        studentMapper.selectAllStudents().forEach(System.out::println);
+    }
+    @Test
+    public void springConfig2Test(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        StudentMapper studentMapper = context.getBean("studentMapper2", StudentMapper.class);
         studentMapper.selectAllStudents().forEach(System.out::println);
     }
 
