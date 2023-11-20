@@ -17,6 +17,7 @@
         <module>Spring-06-ProxyModel</module>
         <module>Spring-07-aop</module>
         <module>Spring-08-Mybatis</module>
+        <module>SpringMVC-07-JDBCTemplate</module>
     </modules>
 
     <properties>
