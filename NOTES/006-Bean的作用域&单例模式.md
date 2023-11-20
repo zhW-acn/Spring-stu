@@ -1,5 +1,5 @@
-
 官网文档的解释
+
 ![Bean Scope.png](img/Bean Scope.png)
 
 如何配置bean的作用域：给bean标签的属性scope赋相应值
