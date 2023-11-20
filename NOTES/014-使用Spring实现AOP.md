@@ -4,21 +4,21 @@
 1. 被代理接口和实现类【UserService和UserServiceImpl】--->**_target_**
 2. 【log&afterLog】是 **_aspect_**，通过继承不同类型的 **_advice_** 重写方法
     ```
-   // 前置增强
+   // 前置增强 implements MethodBeforeAdvice
    // method：目标对象的执行方法
     // args：参数
     // target：被advice的对象
     public void before(Method method, Object[] args, Object target) throws Throwable {
-        System.out.println(target.getClass().getName() + "的" + method.getName() + "方法被执行了");
+        System.out.println("使用了"+target.getClass().getName()+"的"+method.getName()+"方法，形参为"+ Arrays.toString(args));
     }
    
-   // 后置增强
+   // 后置增强 implements AfterReturningAdvice
    // returnValue：返回值类型
    // method：方法
     // args：参数
     // target：被advice的对象
     public void afterReturning(Object returnValue, Method method, Object[] args, Object target) throws Throwable {
-        System.out.println("执行了" + method.getName() + "方法，返回结果为" + returnValue + "目标" + target);
+        System.out.println("使用了"+target.getClass().getName()+"的"+method.getName()+"方法，返回值为"+returnValue+"形参为"+ Arrays.toString(args));
     }
     ```
 3. xml
@@ -30,8 +30,7 @@
 
     <!--配置aop-->
     <aop:config>
-        <!--切入点-->
-        <!--表达式execution(要执行的位置)-->
+        <!--切入点--><!--表达式execution(要执行的位置)-->
         <aop:pointcut id="pointcut" expression="execution(* com.acn.service.UserServiceImpl.*(..))"/>
 
         <!--执行环绕-->
@@ -89,3 +88,24 @@ public class DiyPointCut {
 * **Around**：环绕增强
 
 #### 增强要加execution执行表达式，表示这个方法在哪个连接点切入
+
+```java
+@Aspect
+@Component
+public class AnnotationAOP {
+
+    @Pointcut("execution(public * com.acn.service.UserServiceImpl.*(..))")
+    public void pointcut(){
+    }
+
+    @Before("pointcut()") // 定义切入点函数以简化
+    public void before(){
+        System.out.println("before");
+    }
+
+    @After("execution(public * com.acn.service.UserServiceImpl.*(..))")
+    public void after(){
+        System.out.println("after");
+    }
+}
+```

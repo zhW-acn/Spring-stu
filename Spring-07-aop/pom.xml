@@ -23,6 +23,7 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.8.5</version>
-        </dependency></dependencies>
+        </dependency>
+    </dependencies>
 
 </project>
