@@ -3,11 +3,11 @@
 
 ### 2.`<import resource="***.xml"/>`引用其他Spring配置文件
 
-### 3.`<context:annotation-config/>`开启注解支持
+### 3.`<context:annotation-config/>`开启注解支持，但仍需在IoC中手动注册bean
 
 ### 4.`<context:property-placeholder location="***.properties"/>`引入配置文件
 
-### 5.`<context:component-scan base-package="com.acn.***"/>`扫包，注册被Component标记的类
+### 5.`<context:component-scan base-package="com.acn.***"/>`扫包，注册被Component标记的类，包含了注解支持的功能
 
 ### 6.`<aop:aspectj-autoproxy/>`开启aop注解支持
 
